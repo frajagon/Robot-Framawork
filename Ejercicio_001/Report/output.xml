@@ -1,28 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20231214 08:49:49.757" rpa="false" schemaversion="3">
-<suite id="s1" name="40 Variables" source="D:\Pruebas Automatizadas\Practicas\Ejercicio_001\Test_Case\40_Variables.robot">
-<test id="s1-t1" name="Demo uno" line="13">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Prueba del robot variables</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231214 08:49:50.082" endtime="20231214 08:49:50.083"/>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20231218 16:11:14.958" rpa="false" schemaversion="3">
+<suite id="s1" name="42 Practica dos" source="D:\Pruebas Automatizadas\Practicas\Robot-Framawork\Ejercicio_001\Test_Case\42_Practica_dos.robot">
+<test id="s1-t1" name="Test Case 1" line="18">
+<kw name="Log" library="BuiltIn">
+<arg>${my_var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.248" level="INFO">my_value</msg>
+<status status="PASS" starttime="20231218 16:11:15.248" endtime="20231218 16:11:15.248"/>
 </kw>
-<doc>Caso de prueba para ...</doc>
-<tag>variables</tag>
-<status status="PASS" starttime="20231214 08:49:50.082" endtime="20231214 08:49:50.083"/>
+<kw name="Log" library="BuiltIn">
+<arg>${my_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.249" level="INFO">['Apple', 'Banana', 'Orange']</msg>
+<status status="PASS" starttime="20231218 16:11:15.248" endtime="20231218 16:11:15.249"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${my_dict}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.249" level="INFO">{'name': 'my_value1', 'password': 'my_value2'}</msg>
+<status status="PASS" starttime="20231218 16:11:15.249" endtime="20231218 16:11:15.249"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{my_list}</value>
+<iter>
+<var name="${item}">Apple</var>
+<kw name="Log" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.250" level="INFO">Apple</msg>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</iter>
+<iter>
+<var name="${item}">Banana</var>
+<kw name="Log" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.250" level="INFO">Banana</msg>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</iter>
+<iter>
+<var name="${item}">Orange</var>
+<kw name="Log" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.250" level="INFO">Orange</msg>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</iter>
+<status status="PASS" starttime="20231218 16:11:15.250" endtime="20231218 16:11:15.250"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${my_dict}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.251" level="INFO">my_value1</msg>
+<status status="PASS" starttime="20231218 16:11:15.251" endtime="20231218 16:11:15.251"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${my_dict}[password]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231218 16:11:15.251" level="INFO">my_value2</msg>
+<status status="PASS" starttime="20231218 16:11:15.251" endtime="20231218 16:11:15.251"/>
+</kw>
+<for flavor="IN">
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{my_dict}</value>
+<iter>
+<var name="${key}">name</var>
+<var name="${value}">my_value1</var>
+<kw name="Log Many" library="BuiltIn">
+<arg>${key}</arg>
+<arg>${value}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20231218 16:11:15.252" level="INFO">name</msg>
+<msg timestamp="20231218 16:11:15.252" level="INFO">my_value1</msg>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.252"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.252"/>
+</iter>
+<iter>
+<var name="${key}">password</var>
+<var name="${value}">my_value2</var>
+<kw name="Log Many" library="BuiltIn">
+<arg>${key}</arg>
+<arg>${value}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20231218 16:11:15.252" level="INFO">password</msg>
+<msg timestamp="20231218 16:11:15.252" level="INFO">my_value2</msg>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.252"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.252"/>
+</iter>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.252"/>
+</for>
+<kw name="My Keyword">
+<kw name="Log Many" library="BuiltIn">
+<arg>${my_var}</arg>
+<arg>${my_list}</arg>
+<arg>${my_dict}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20231218 16:11:15.253" level="INFO">my_value</msg>
+<msg timestamp="20231218 16:11:15.253" level="INFO">['Apple', 'Banana', 'Orange']</msg>
+<msg timestamp="20231218 16:11:15.253" level="INFO">{'name': 'my_value1', 'password': 'my_value2'}</msg>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.253"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.252" endtime="20231218 16:11:15.253"/>
+</kw>
+<status status="PASS" starttime="20231218 16:11:15.246" endtime="20231218 16:11:15.253"/>
 </test>
-<doc>Descripcion del proyecto ....</doc>
-<status status="PASS" starttime="20231214 08:49:49.759" endtime="20231214 08:49:50.084"/>
+<doc>Practica dos</doc>
+<status status="PASS" starttime="20231218 16:11:14.960" endtime="20231218 16:11:15.254"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">variables</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="40 Variables">40 Variables</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="42 Practica dos">42 Practica dos</stat>
 </suite>
 </statistics>
 <errors>

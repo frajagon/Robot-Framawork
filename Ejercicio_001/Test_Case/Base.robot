@@ -8,7 +8,7 @@ Library     SeleniumLibrary
 
 *** Test Cases ***
 Demo uno
-    [Documentation]     Caso de prueba para ...
+    [Documentation]     Utilizando las variables en las pruebas
     [Tags]      variables
 
 
@@ -16,4 +16,4 @@ Demo uno
 
 
 # robot -d ../Report Test_uno.robot
-
+# robot -d .\Report\ .\Test_Case\40_Variables.robot
