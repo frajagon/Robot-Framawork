@@ -18,7 +18,7 @@ Validando titulo pagina
     ${email}=   Set Variable   id=userEmail
     ${dir1}=   Set Variable    id=currentAddress
     ${dir2}=   Set Variable    id=permanentAddress
-    ${boton}=   Set Variable    id=submit
+    ${boton}=   Set Variable   id=submit
 
     Title Should Be    DEMOQA
 
@@ -26,6 +26,8 @@ Validando titulo pagina
     Element Should Be Enabled    ${name}
 
     Element Attribute Value Should Be    ${dir1}    placeholder    Current Address
+
+    
 
 
     Input Text      ${name}     Francisco Javier
