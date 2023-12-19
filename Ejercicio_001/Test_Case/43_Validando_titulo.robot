@@ -8,16 +8,23 @@ Library    Collections
 ${url}=         https://demoqa.com/text-box
 ${brouser}=     chrome
 
-@{my_list}    Apple    Banana    Orange
-&{my_dict}    name=my_value1    password=my_value2
 
 *** Test Cases ***
-Demo uno
-    [Documentation]     Caso de prueba utilizand variables
-    [Tags]      variables
-
+Validando titulo pagina
     Open Browser    ${url}      ${brouser}
     Maximize Browser Window
+
+    ${name}=   Set Variable    id=userName
+    ${email}=   Set Variable    id=userEmail
+    ${dir1}=   Set Variable    id=currentAddress
+
+    Title Should Be    DEMOQA
+
+    Element Should Be Visible    ${name}
+    Element Should Be Enabled    ${name}
+
+    Element Attribute Value Should Be    ${dir1}    placeholder    Current Address
+
 
     Input Text      id=userName    Francisco Javier
     Input Text      id=userEmail      frajagon@gmail.com
@@ -28,27 +35,8 @@ Demo uno
     Sleep    2s
     Close Browser
 
-Test Case 1
-    Log    ${my_var}
-    Log    ${my_list}
-    Log    ${my_dict}
-    FOR    ${item}    IN    @{my_list}
-        Log    ${item}
-    END
-    Log    ${my_dict}[name]
-    Log    ${my_dict}[password]
-    FOR   ${key}    ${value}    IN    &{my_dict}
-        Log Many    ${key}    ${value}
-    END
-    My Keyword
 
 *** Keywords ***
-My Keyword
-    Log Many    ${my_var}    ${my_list}    ${my_dict}
-
-*** Keywords ***
-
-
 # robot -d ../Report Test_uno.robot
 # robot -d .\Report\ .\Test_Case\40_Variables.robot
 
