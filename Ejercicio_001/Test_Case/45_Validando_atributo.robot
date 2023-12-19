@@ -27,8 +27,6 @@ Validando titulo pagina
 
     Element Attribute Value Should Be    ${dir1}    placeholder    Current Address
 
-    
-
 
     Input Text      ${name}     Francisco Javier
     Input Text      ${email}    frajagon@gmail.com
